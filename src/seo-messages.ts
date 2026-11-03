@@ -54,29 +54,29 @@ const titles = localeNames({
 });
 
 const descriptions = localeNames({
-  ru: "Конвертируйте cores и millicores, Ki/Mi/Gi и M/G/MB/GB в единицы Kubernetes. Живой перевод в браузере, YAML-фрагменты и краткая подсказка requests vs limits.",
-  en: "Convert cores and millicores, Ki/Mi/Gi and M/G/MB/GB into Kubernetes quantities. Live conversion in the browser, YAML snippets and a short requests vs limits tip.",
-  zh: "将 cores 与 millicores、Ki/Mi/Gi 与 M/G/MB/GB 换算为 Kubernetes 资源量。浏览器内即时换算、YAML 片段以及简短的 requests 与 limits 说明。",
-  es: "Convierta cores y millicores, Ki/Mi/Gi y M/G/MB/GB a cantidades de Kubernetes. Conversión en vivo en el navegador, fragmentos YAML y una nota breve sobre requests y limits.",
-  hi: "cores और millicores, Ki/Mi/Gi तथा M/G/MB/GB को Kubernetes मात्राओं में बदलें। ब्राउज़र में लाइव रूपांतरण, YAML अंश और requests बनाम limits की संक्षिप्त टिप।",
-  ar: "حوّل الأنوية والميلي كور وKi/Mi/Gi وM/G/MB/GB إلى كميات Kubernetes. تحويل فوري في المتصفح ومقتطفات YAML ونصيحة قصيرة عن requests وlimits.",
-  bn: "cores ও millicores, Ki/Mi/Gi এবং M/G/MB/GB কে Kubernetes পরিমাণে রূপান্তর করুন। ব্রাউজারে লাইভ রূপান্তর, YAML স্নিপেট এবং requests বনাম limits-এর সংক্ষিপ্ত টিপ।",
-  pt: "Converta cores e millicores, Ki/Mi/Gi e M/G/MB/GB em quantidades Kubernetes. Conversão ao vivo no navegador, trechos YAML e uma dica curta sobre requests e limits.",
-  fr: "Convertissez cores et millicores, Ki/Mi/Gi et M/G/MB/GB en quantités Kubernetes. Conversion en direct dans le navigateur, extraits YAML et un rappel requests vs limits.",
-  de: "Rechnen Sie Cores und Millicores, Ki/Mi/Gi und M/G/MB/GB in Kubernetes-Mengen um. Live-Umrechnung im Browser, YAML-Schnipsel und ein kurzer Hinweis zu requests und limits.",
-  ja: "cores と millicores、Ki/Mi/Gi と M/G/MB/GB を Kubernetes の数量に換算。ブラウザ内で即時換算、YAML 断片、requests と limits の短い説明付き。",
-  id: "Konversi cores dan millicores, Ki/Mi/Gi serta M/G/MB/GB ke kuantitas Kubernetes. Konversi langsung di peramban, cuplikan YAML, dan tip singkat requests vs limits.",
-  pa: "cores ਅਤੇ millicores, Ki/Mi/Gi ਅਤੇ M/G/MB/GB ਨੂੰ Kubernetes ਮਾਤਰਾਵਾਂ ਵਿੱਚ ਬਦਲੋ। ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਲਾਈਵ ਰੂਪਾਂਤਰਨ, YAML ਟੁਕੜੇ ਅਤੇ requests ਬਨਾਮ limits ਦੀ ਛੋਟੀ ਟਿਪ।",
-  jv: "Owahi cores lan millicores, Ki/Mi/Gi sarta M/G/MB/GB dadi kuantitas Kubernetes. Konversi langsung ing browser, cuplikan YAML, lan tip cekak requests vs limits.",
-  te: "cores మరియు millicores, Ki/Mi/Gi మరియు M/G/MB/GBను Kubernetes పరిమాణాలుగా మార్చండి. బ్రౌజర్‌లో లైవ్ మార్పిడి, YAML స్నిప్పెట్లు మరియు requests vs limits చిన్న చిట్కా.",
-  tr: "Cores ve millicores ile Ki/Mi/Gi ve M/G/MB/GB değerlerini Kubernetes miktarlarına dönüştürün. Tarayıcıda canlı dönüşüm, YAML parçaları ve kısa requests vs limits ipucu.",
-  ko: "cores·millicores와 Ki/Mi/Gi·M/G/MB/GB를 Kubernetes 수량으로 변환합니다. 브라우저에서 즉시 변환, YAML 조각, requests와 limits에 대한 짧은 안내.",
-  mr: "cores आणि millicores, Ki/Mi/Gi आणि M/G/MB/GB यांचे Kubernetes प्रमाणात रूपांतर करा. ब्राउझरमध्ये थेट रूपांतरण, YAML तुकडे आणि requests विरुद्ध limits ची छोटी टीप.",
-  vi: "Đổi cores và millicores, Ki/Mi/Gi cùng M/G/MB/GB sang số lượng Kubernetes. Đổi trực tiếp trong trình duyệt, đoạn YAML và mẹo ngắn về requests so với limits.",
-  ta: "cores மற்றும் millicores, Ki/Mi/Gi மற்றும் M/G/MB/GB-ஐ Kubernetes அளவுகளாக மாற்றுங்கள். உலாவியில் நேரடி மாற்றம், YAML துண்டுகள் மற்றும் requests vs limits குறுகிய குறிப்பு.",
-  it: "Converti cores e millicores, Ki/Mi/Gi e M/G/MB/GB in quantità Kubernetes. Conversione live nel browser, frammenti YAML e un breve tip su requests e limits.",
-  fa: "cores و millicores، Ki/Mi/Gi و M/G/MB/GB را به کمیت‌های Kubernetes تبدیل کنید. تبدیل زنده در مرورگر، قطعه‌های YAML و نکته کوتاه درباره requests در برابر limits.",
-  tlh: "cores millicores je, Ki/Mi/Gi M/G/MB/GB je Kubernetes mI'meyDaq yIchoH. lIjwI'Daq choHtaH, YAML Hol, requests vs limits tip je."
+  ru: "Конвертер единиц Kubernetes: cores ↔ millicores, Mi/Gi vs M/G с предупреждением, QoS одного контейнера и шаринг ?cpu=&mem=. Всё в браузере.",
+  en: "Kubernetes unit converter: cores ↔ millicores, Mi/Gi vs M/G with a decimal warning, single-container QoS, and shareable ?cpu=&mem= links. Runs in the browser.",
+  zh: "Kubernetes 单位换算：cores ↔ millicores、Mi/Gi 与 M/G 警告、单容器 QoS，以及可分享的 ?cpu=&mem= 链接。全部在浏览器中运行。",
+  es: "Conversor de unidades Kubernetes: cores ↔ millicores, Mi/Gi vs M/G con aviso, QoS de un contenedor y enlaces ?cpu=&mem=. Todo en el navegador.",
+  hi: "Kubernetes इकाई कनवर्टर: cores ↔ millicores, Mi/Gi बनाम M/G चेतावनी, एक कंटेनर QoS और साझा ?cpu=&mem= लिंक। ब्राउज़र में चलता है।",
+  ar: "محول وحدات Kubernetes: cores ↔ millicores وتحذير Mi/Gi مقابل M/G وQoS لحاوية واحدة وروابط ?cpu=&mem=. يعمل في المتصفح.",
+  bn: "Kubernetes একক কনভার্টার: cores ↔ millicores, Mi/Gi বনাম M/G সতর্কতা, এক কন্টেইনার QoS এবং শেয়ারযোগ্য ?cpu=&mem= লিংক। ব্রাউজারে চলে।",
+  pt: "Conversor de unidades Kubernetes: cores ↔ millicores, Mi/Gi vs M/G com aviso, QoS de um contentor e links ?cpu=&mem=. Corre no navegador.",
+  fr: "Convertisseur d’unités Kubernetes : cores ↔ millicores, alerte Mi/Gi vs M/G, QoS d’un conteneur et liens ?cpu=&mem=. Dans le navigateur.",
+  de: "Kubernetes-Einheiten-Umrechner: Cores ↔ Millicores, Warnung Mi/Gi vs M/G, QoS für einen Container und teilbare ?cpu=&mem=-Links. Im Browser.",
+  ja: "Kubernetes 単位換算：cores ↔ millicores、Mi/Gi と M/G の警告、単一コンテナ QoS、共有可能な ?cpu=&mem=。ブラウザ内で動作。",
+  id: "Konverter unit Kubernetes: cores ↔ millicores, peringatan Mi/Gi vs M/G, QoS satu kontainer, dan tautan ?cpu=&mem=. Di peramban.",
+  pa: "Kubernetes ਇਕਾਈ ਕਨਵਰਟਰ: cores ↔ millicores, Mi/Gi ਬਨਾਮ M/G ਚੇਤਾਵਨੀ, ਇੱਕ ਕੰਟੇਨਰ QoS ਅਤੇ ?cpu=&mem= ਲਿੰਕ। ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ।",
+  jv: "Konverter unit Kubernetes: cores ↔ millicores, pepenget Mi/Gi vs M/G, QoS siji kontainer, lan pranala ?cpu=&mem=. Ing browser.",
+  te: "Kubernetes యూనిట్ కన్వర్టర్: cores ↔ millicores, Mi/Gi vs M/G హెచ్చరిక, ఒక కంటైనర్ QoS, ?cpu=&mem= లింకులు. బ్రౌజర్‌లో.",
+  tr: "Kubernetes birim dönüştürücü: cores ↔ millicores, Mi/Gi vs M/G uyarısı, tek konteyner QoS ve ?cpu=&mem= bağlantıları. Tarayıcıda.",
+  ko: "Kubernetes 단위 변환: cores ↔ millicores, Mi/Gi vs M/G 경고, 단일 컨테이너 QoS, 공유 ?cpu=&mem= 링크. 브라우저에서 실행.",
+  mr: "Kubernetes एकक कनव्हर्टर: cores ↔ millicores, Mi/Gi विरुद्ध M/G इशारा, एक कंटेनर QoS आणि ?cpu=&mem= लिंक्स. ब्राउझरमध्ये.",
+  vi: "Bộ đổi đơn vị Kubernetes: cores ↔ millicores, cảnh báo Mi/Gi vs M/G, QoS một container và liên kết ?cpu=&mem=. Chạy trong trình duyệt.",
+  ta: "Kubernetes அலகு மாற்றி: cores ↔ millicores, Mi/Gi vs M/G எச்சரிக்கை, ஒரு கொள்கலன் QoS, பகிரக்கூடிய ?cpu=&mem=. உலாவியில்.",
+  it: "Convertitore di unità Kubernetes: cores ↔ millicores, avviso Mi/Gi vs M/G, QoS di un contenitore e link ?cpu=&mem=. Nel browser.",
+  fa: "مبدل واحدهای Kubernetes: cores ↔ millicores، هشدار Mi/Gi در برابر M/G، QoS یک کانتینر و پیوندهای ?cpu=&mem=. در مرورگر.",
+  tlh: "Kubernetes 'ay' choHwI': cores ↔ millicores, Mi/Gi vs M/G ghuH, wa' QoS, ?cpu=&mem=. lIjwI'Daq.",
 });
 
 const headings = localeNames({
@@ -106,29 +106,29 @@ const headings = localeNames({
 });
 
 const leads = localeNames({
-  ru: "Переводите CPU (cores ↔ millicores) и память (Ki/Mi/Gi и M/G/MB/GB) в формат манифестов. Всё считается в браузере — без API и без загрузки данных.",
-  en: "Convert CPU (cores ↔ millicores) and memory (Ki/Mi/Gi and M/G/MB/GB) into manifest-ready values. Everything runs in your browser — no API and no data upload.",
-  zh: "将 CPU（cores ↔ millicores）和内存（Ki/Mi/Gi 与 M/G/MB/GB）换算为可写入清单的值。全部在浏览器中完成——无 API、不上传数据。",
-  es: "Convierta CPU (cores ↔ millicores) y memoria (Ki/Mi/Gi y M/G/MB/GB) a valores listos para manifiestos. Todo corre en su navegador: sin API ni subida de datos.",
-  hi: "CPU (cores ↔ millicores) और मेमोरी (Ki/Mi/Gi तथा M/G/MB/GB) को मैनिफेस्ट के लिए तैयार मानों में बदलें। सब कुछ आपके ब्राउज़र में चलता है — कोई API नहीं, कोई अपलोड नहीं।",
-  ar: "حوّل وحدة المعالجة (cores ↔ millicores) والذاكرة (Ki/Mi/Gi وM/G/MB/GB) إلى قيم جاهزة للمانيفست. كل شيء يعمل في متصفحك — بلا واجهة برمجة ولا رفع بيانات.",
-  bn: "CPU (cores ↔ millicores) ও মেমরি (Ki/Mi/Gi এবং M/G/MB/GB) ম্যানিফেস্ট-উপযোগী মানে রূপান্তর করুন। সব আপনার ব্রাউজারে চলে — কোনো API নেই, কোনো আপলোড নেই।",
-  pt: "Converta CPU (cores ↔ millicores) e memória (Ki/Mi/Gi e M/G/MB/GB) em valores prontos para manifests. Tudo corre no seu navegador — sem API e sem envio de dados.",
-  fr: "Convertissez le CPU (cores ↔ millicores) et la mémoire (Ki/Mi/Gi et M/G/MB/GB) en valeurs prêtes pour les manifests. Tout s’exécute dans votre navigateur — pas d’API ni d’envoi de données.",
-  de: "Rechnen Sie CPU (Cores ↔ Millicores) und Speicher (Ki/Mi/Gi und M/G/MB/GB) in manifestereife Werte um. Alles läuft im Browser — ohne API und ohne Upload.",
-  ja: "CPU（cores ↔ millicores）とメモリ（Ki/Mi/Gi と M/G/MB/GB）をマニフェスト向けの値に換算します。すべてブラウザ内で動作し、API もデータ送信もありません。",
-  id: "Konversi CPU (cores ↔ millicores) dan memori (Ki/Mi/Gi serta M/G/MB/GB) menjadi nilai siap manifes. Semuanya berjalan di peramban Anda — tanpa API dan tanpa unggah data.",
-  pa: "CPU (cores ↔ millicores) ਅਤੇ ਮੈਮੋਰੀ (Ki/Mi/Gi ਅਤੇ M/G/MB/GB) ਨੂੰ ਮੈਨੀਫੈਸਟ ਲਈ ਤਿਆਰ ਮੁੱਲਾਂ ਵਿੱਚ ਬਦਲੋ। ਸਭ ਤੁਹਾਡੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਚੱਲਦਾ ਹੈ — ਕੋਈ API ਨਹੀਂ, ਕੋਈ ਅੱਪਲੋਡ ਨਹੀਂ।",
-  jv: "Owahi CPU (cores ↔ millicores) lan memori (Ki/Mi/Gi sarta M/G/MB/GB) dadi nilai siap manifes. Kabeh mlaku ing browser sampeyan — tanpa API lan tanpa unggah data.",
-  te: "CPU (cores ↔ millicores) మరియు మెమరీ (Ki/Mi/Gi మరియు M/G/MB/GB)ను మానిఫెస్ట్-సిద్ధ విలువలుగా మార్చండి. అన్నీ మీ బ్రౌజర్‌లోనే — API లేదు, డేటా అప్‌లోడ్ లేదు.",
-  tr: "CPU (cores ↔ millicores) ve belleği (Ki/Mi/Gi ve M/G/MB/GB) manifesto hazır değerlere dönüştürün. Her şey tarayıcınızda çalışır — API yok, veri yüklemesi yok.",
-  ko: "CPU(cores ↔ millicores)와 메모리(Ki/Mi/Gi·M/G/MB/GB)를 매니페스트용 값으로 변환합니다. 모든 계산이 브라우저에서 이루어지며 API와 데이터 업로드가 없습니다.",
-  mr: "CPU (cores ↔ millicores) आणि मेमरी (Ki/Mi/Gi आणि M/G/MB/GB) मॅनिफेस्टसाठी तयार मूल्यांत रूपांतरित करा. सर्व तुमच्या ब्राउझरमध्ये चालते — API नाही, अपलोड नाही.",
-  vi: "Đổi CPU (cores ↔ millicores) và bộ nhớ (Ki/Mi/Gi cùng M/G/MB/GB) thành giá trị sẵn dùng cho manifest. Mọi thứ chạy trong trình duyệt — không API, không tải dữ liệu lên.",
-  ta: "CPU (cores ↔ millicores) மற்றும் நினைவகம் (Ki/Mi/Gi மற்றும் M/G/MB/GB) ஆகியவற்றை மேனிஃபெஸ்ட் தயாரான மதிப்புகளாக மாற்றுங்கள். அனைத்தும் உலாவியில் இயங்கும் — API இல்லை, தரவேற்றம் இல்லை.",
-  it: "Converti CPU (cores ↔ millicores) e memoria (Ki/Mi/Gi e M/G/MB/GB) in valori pronti per i manifest. Tutto gira nel browser: niente API e nessun upload.",
-  fa: "CPU (cores ↔ millicores) و حافظه (Ki/Mi/Gi و M/G/MB/GB) را به مقادیر آمادهٔ مانیفست تبدیل کنید. همه چیز در مرورگر شما اجرا می‌شود — بدون API و بدون بارگذاری داده.",
-  tlh: "CPU (cores ↔ millicores) qawHaq (Ki/Mi/Gi M/G/MB/GB je) je manifest mI'meyDaq yIchoH. Hoch lIjwI'Daq ro' — API pagh De' QoymoHbe'."
+  ru: "Переводите CPU и память в формат манифестов, вставляйте <code>500m</code>/<code>256Mi</code>, смотрите предупреждение Mi vs M, делитесь ссылкой и проверяйте QoS. Всё в браузере — без API.",
+  en: "Convert CPU and memory into manifest-ready values, paste <code>500m</code>/<code>256Mi</code>, see Mi vs M warnings, share a link, and check QoS. Everything runs in your browser — no API.",
+  zh: "将 CPU 与内存换算为可写入清单的值，粘贴 <code>500m</code>/<code>256Mi</code>，查看 Mi 与 M 警告，分享链接并检查 QoS。全部在浏览器中完成——无 API。",
+  es: "Convierta CPU y memoria a valores para manifiestos, pegue <code>500m</code>/<code>256Mi</code>, vea avisos Mi vs M, comparta el enlace y revise el QoS. Todo en el navegador — sin API.",
+  hi: "CPU और मेमोरी को मैनिफेस्ट मानों में बदलें, <code>500m</code>/<code>256Mi</code> चिपकाएँ, Mi बनाम M चेतावनी देखें, लिंक साझा करें और QoS जाँचें। ब्राउज़र में — कोई API नहीं।",
+  ar: "حوّل CPU والذاكرة لقيم المانيفست، الصق <code>500m</code>/<code>256Mi</code>، انظر تحذير Mi مقابل M، شارك الرابط وافحص QoS. في المتصفح — بلا API.",
+  bn: "CPU ও মেমরি ম্যানিফেস্ট মানে রূপান্তর করুন, <code>500m</code>/<code>256Mi</code> পেস্ট করুন, Mi বনাম M সতর্কতা দেখুন, লিংক শেয়ার করুন ও QoS যাচাই করুন। ব্রাউজারে — কোনো API নেই।",
+  pt: "Converta CPU e memória para manifests, cole <code>500m</code>/<code>256Mi</code>, veja o aviso Mi vs M, partilhe o link e confira o QoS. No navegador — sem API.",
+  fr: "Convertissez CPU et mémoire pour les manifests, collez <code>500m</code>/<code>256Mi</code>, voyez l’alerte Mi vs M, partagez le lien et vérifiez le QoS. Dans le navigateur — pas d’API.",
+  de: "Rechnen Sie CPU und Speicher in manifestereife Werte um, fügen Sie <code>500m</code>/<code>256Mi</code> ein, sehen Sie die Warnung Mi vs M, teilen Sie den Link und prüfen Sie QoS. Im Browser — ohne API.",
+  ja: "CPU とメモリをマニフェスト向けに換算し、<code>500m</code>/<code>256Mi</code> を貼り付け、Mi と M の警告を確認し、リンク共有と QoS チェック。ブラウザ内 — API なし。",
+  id: "Konversi CPU dan memori ke nilai manifes, tempel <code>500m</code>/<code>256Mi</code>, lihat peringatan Mi vs M, bagikan tautan, dan cek QoS. Di peramban — tanpa API.",
+  pa: "CPU ਤੇ ਮੈਮੋਰੀ ਨੂੰ ਮੈਨੀਫੈਸਟ ਮੁੱਲਾਂ ਵਿੱਚ ਬਦਲੋ, <code>500m</code>/<code>256Mi</code> ਪੇਸਟ ਕਰੋ, Mi ਬਨਾਮ M ਚੇਤਾਵਨੀ ਵੇਖੋ, ਲਿੰਕ ਸਾਂਝਾ ਕਰੋ ਤੇ QoS ਜਾਂਚੋ। ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ — API ਨਹੀਂ।",
+  jv: "Owahi CPU lan memori dadi nilai manifes, tempel <code>500m</code>/<code>256Mi</code>, deleng pepenget Mi vs M, enggo pranala, lan priksa QoS. Ing browser — tanpa API.",
+  te: "CPU మరియు మెమరీని మానిఫెస్ట్ విలువలుగా మార్చండి, <code>500m</code>/<code>256Mi</code> పేస్ట్ చేయండి, Mi vs M హెచ్చరిక చూడండి, లింక్ షేర్ చేసి QoS తనిఖీ చేయండి. బ్రౌజర్‌లో — API లేదు.",
+  tr: "CPU ve belleği manifesto değerlerine çevirin, <code>500m</code>/<code>256Mi</code> yapıştırın, Mi vs M uyarısını görün, bağlantıyı paylaşın ve QoS kontrol edin. Tarayıcıda — API yok.",
+  ko: "CPU·메모리를 매니페스트 값으로 바꾸고 <code>500m</code>/<code>256Mi</code>를 붙여넣으며 Mi vs M 경고를 보고 링크를 공유하고 QoS를 확인하세요. 브라우저에서 — API 없음.",
+  mr: "CPU आणि मेमरी मॅनिफेस्ट मूल्यांत बदला, <code>500m</code>/<code>256Mi</code> पेस्ट करा, Mi विरुद्ध M इशारा पहा, लिंक शेअर करा आणि QoS तपासा. ब्राउझरमध्ये — API नाही.",
+  vi: "Đổi CPU và bộ nhớ thành giá trị manifest, dán <code>500m</code>/<code>256Mi</code>, xem cảnh báo Mi vs M, chia sẻ liên kết và kiểm tra QoS. Trong trình duyệt — không API.",
+  ta: "CPU மற்றும் நினைவகத்தை மேனிஃபெஸ்ட் மதிப்புகளாக மாற்றி, <code>500m</code>/<code>256Mi</code> ஒட்டி, Mi vs M எச்சரிக்கையைப் பார்த்து, இணைப்பைப் பகிர்ந்து QoS சரிபாருங்கள். உலாவியில் — API இல்லை.",
+  it: "Converti CPU e memoria in valori per i manifest, incolla <code>500m</code>/<code>256Mi</code>, vedi l’avviso Mi vs M, condividi il link e controlla il QoS. Nel browser — niente API.",
+  fa: "CPU و حافظه را به مقادیر مانیفست تبدیل کنید، <code>500m</code>/<code>256Mi</code> بچسبانید، هشدار Mi در برابر M را ببینید، پیوند را هم‌رسانی کنید و QoS را بررسی کنید. در مرورگر — بدون API.",
+  tlh: "CPU qawHaq je manifest mI'meyDaq yIchoH, <code>500m</code>/<code>256Mi</code> yIlan, Mi vs M yIlegh, 'ej yo' 'ej QoS yIDoy'. lIjwI'Daq — API pagh.",
 });
 
 const bodies: Record<Locale, SeoBody> = {
@@ -137,20 +137,20 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Рекомендации:",
     benefitsTitle: "Зачем нужен k8size",
     benefits: [
-      "<strong>Cores ↔ millicores.</strong> Введите дробные ядра или целые милликоры и сразу увидите обе формы и YAML вроде <code>cpu: \"500m\"</code>.",
-      "<strong>Двоичная и десятичная память.</strong> Различайте Mi/Gi (1024) и M/G/MB/GB (1000), чтобы 256Mi не путать с 256M.",
+      "<strong>Cores ↔ millicores.</strong> Введите дробные ядра, целые милликоры или вставьте <code>500m</code> / <code>0.5</code> — увидите обе формы и YAML.",
+      "<strong>Mi vs M с предупреждением.</strong> При десятичных суффиксах сервис предупреждает и предлагает двоичный вариант (256M → 256Mi).",
+      "<strong>Шаринг расчёта.</strong> Кнопка «Ссылка» копирует URL с <code>?cpu=</code> и <code>?mem=</code> для чатов и тикетов.",
+      "<strong>QoS одного контейнера.</strong> Guaranteed / Burstable / BestEffort по request/limit — без sizing-advisor.",
       "<strong>Готовые YAML-фрагменты.</strong> Копируйте строки <code>cpu</code> и <code>memory</code> для requests и limits.",
-      "<strong>Краткая подсказка requests vs limits.</strong> Напоминание про Guaranteed QoS — не совет по сайзингу.",
-      "<strong>Кнопки примеров.</strong> Подставляют типичные значения манифестов: <code>100m</code>, <code>500m</code>, <code>256Mi</code>, <code>1Gi</code>.",
       "<strong>Только в браузере.</strong> Без API; значения не уходят с устройства.",
-      "<strong>Бесплатно и на многих языках.</strong> Без аккаунта; UI и SEO есть для каждой локали набора."
+      "<strong>Бесплатно и на многих языках.</strong> Без аккаунта; UI и SEO на каждую локаль набора."
     ],
     howTitle: "Как конвертировать единицы Kubernetes",
     howSteps: [
-      "Откройте блок CPU или «Память».",
-      "Введите число и выберите единицу (cores, millicores, Mi, Gi, M, G, …).",
-      "Смотрите эквиваленты и YAML-фрагменты по мере ввода.",
-      "Нажмите пример, чтобы подставить значение, затем скопируйте нужный сниппет."
+      "Введите число или вставьте величину целиком (<code>500m</code>, <code>256Mi</code>).",
+      "При десятичной памяти прочитайте предупреждение и при необходимости подставьте Mi/Gi.",
+      "Скопируйте YAML или нажмите «Ссылка», чтобы поделиться <code>?cpu=&mem=</code>.",
+      "При желании заполните request/limit в блоке QoS и посмотрите класс."
     ],
     strongTitle: "Единицы, requests и limits",
     strongLead: "Kubernetes принимает CPU как cores или millicores (<code>m</code>), а память — с двоичными (Ki/Mi/Gi/Ti) или десятичными (k/M/G/T) суффиксами. Сервис только переводит величины и не подсказывает «правильный» размер requests.",
@@ -160,7 +160,9 @@ const bodies: Record<Locale, SeoBody> = {
       "requests влияют на планирование, limits ограничивают потребление — обычно requests ≤ limits.",
       "Одинаковые requests и limits по CPU и памяти дают Guaranteed QoS.",
       "Договаривайтесь в команде об одном стиле единиц, чтобы не путать Mi и M.",
-      "Это не sizing-advisor — реальную нагрузку измеряйте отдельно."
+      "Это не sizing-advisor — реальную нагрузку измеряйте отдельно.",
+      "При M/G/MB сервис предупреждает: часто нужен Mi/Gi.",
+      "Ссылка с ?cpu=&mem= удобна для тикетов и ревью.",
     ],
     usesTitle: "Для чего нужен сервис",
     uses: [
@@ -181,7 +183,10 @@ const bodies: Record<Locale, SeoBody> = {
       { q: "А Ti и T?", a: "Ti — 1024⁴ байт; T/TB — 1000⁴. Обе строки есть в таблице памяти." },
       { q: "Обязателен ли Guaranteed QoS?", a: "Нет. Это один из классов QoS, когда requests равны limits по CPU и памяти." },
       { q: "Это редактор манифестов?", a: "Нет. Только конвертация единиц и короткие YAML-фрагменты." },
-      { q: "Сервис платный?", a: "Нет — бесплатно, без регистрации и лимитов на конвертации." }
+      { q: "Сервис платный?", a: "Нет — бесплатно, без регистрации и лимитов на конвертации." },
+      { q: "Что делает предупреждение про M и Mi?", a: "Если выбрана десятичная единица (M/G/MB…), сервис напоминает, что в манифестах чаще имеют в виду двоичные Mi/Gi, и предлагает подставить их." },
+      { q: "Как поделиться расчётом?", a: "Нажмите «Ссылка» — в буфер попадёт URL с параметрами ?cpu= и ?mem=. Можно открыть ссылку и получить те же значения." },
+      { q: "Что показывает блок QoS?", a: "Упрощённый класс Guaranteed, Burstable или BestEffort для одного контейнера по полям request/limit. Это не рекомендация размера нагрузки." },
     ],
   },
   en: {
@@ -189,20 +194,20 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Tips:",
     benefitsTitle: "Why use k8size",
     benefits: [
-      "<strong>Cores ↔ millicores.</strong> Enter decimal cores or integer millicores and see both forms plus YAML like <code>cpu: \"500m\"</code>.",
-      "<strong>Binary vs decimal memory.</strong> Distinguish Mi/Gi (1024) from M/G/MB/GB (1000) so a 256Mi request is not confused with 256M.",
+      "<strong>Cores ↔ millicores.</strong> Enter decimal cores, integer millicores, or paste <code>500m</code> / <code>0.5</code> — see both forms plus YAML.",
+      "<strong>Mi vs M warning.</strong> Decimal suffixes trigger a warning and a one-click switch to the binary unit (256M → 256Mi).",
+      "<strong>Shareable calculations.</strong> Copy a link with <code>?cpu=</code> and <code>?mem=</code> for chats and tickets.",
+      "<strong>Single-container QoS.</strong> Guaranteed / Burstable / BestEffort from request/limit fields — not a sizing advisor.",
       "<strong>YAML snippets ready to paste.</strong> Copy <code>cpu</code> and <code>memory</code> lines for requests and limits.",
-      "<strong>Short requests vs limits tip.</strong> A reminder of Guaranteed QoS — not a sizing advisor.",
-      "<strong>Example buttons.</strong> Fill common manifest values such as <code>100m</code>, <code>500m</code>, <code>256Mi</code>, <code>1Gi</code>.",
       "<strong>Runs in the browser.</strong> No API; values never leave your device.",
-      "<strong>Free and multilingual.</strong> No account; UI and SEO are available in every supported locale."
+      "<strong>Free and multilingual.</strong> No account; UI and SEO in every supported locale."
     ],
     howTitle: "How to convert Kubernetes units",
     howSteps: [
-      "Open the CPU or Memory section.",
-      "Type a number and pick the unit (cores, millicores, Mi, Gi, M, G, …).",
-      "Read the equivalents and YAML snippets as you type.",
-      "Use an example button to load a sample value, then copy the snippet you need."
+      "Type a number or paste a full quantity (<code>500m</code>, <code>256Mi</code>).",
+      "If you used a decimal memory unit, read the warning and switch to Mi/Gi when needed.",
+      "Copy YAML or use Share to send a <code>?cpu=&mem=</code> link.",
+      "Optionally fill request/limit fields in the QoS panel and check the class."
     ],
     strongTitle: "Units, requests and limits",
     strongLead: "Kubernetes accepts CPU as cores or millicores (<code>m</code>) and memory as binary (Ki/Mi/Gi/Ti) or decimal (k/M/G/T) suffixes. This tool only converts quantities — it does not recommend how large requests should be.",
@@ -212,7 +217,9 @@ const bodies: Record<Locale, SeoBody> = {
       "requests guide scheduling; limits cap usage — usually requests ≤ limits.",
       "Equal CPU and memory requests and limits yield Guaranteed QoS.",
       "Prefer the same unit style across a team to avoid Mi vs M mistakes.",
-      "This is not a workload sizing advisor — measure real usage separately."
+      "This is not a workload sizing advisor — measure real usage separately.",
+      "Decimal M/G/MB trigger a warning — you often want Mi/Gi.",
+      "A ?cpu=&mem= link is handy for tickets and reviews.",
     ],
     usesTitle: "What it is for",
     uses: [
@@ -233,7 +240,10 @@ const bodies: Record<Locale, SeoBody> = {
       { q: "What about Ti and T?", a: "Ti is 1024⁴ bytes; T/TB are 1000⁴. Both appear in the memory table." },
       { q: "Is Guaranteed QoS required?", a: "No. It is one QoS class when requests equal limits for CPU and memory." },
       { q: "Does it edit full manifests?", a: "No. It only converts units and offers short YAML snippets." },
-      { q: "Is the service free?", a: "Yes — free, no registration, no conversion limits." }
+      { q: "Is the service free?", a: "Yes — free, no registration, no conversion limits." },
+      { q: "What does the M vs Mi warning do?", a: "If you pick a decimal unit (M/G/MB…), the tool reminds you that manifests often mean binary Mi/Gi and offers to switch." },
+      { q: "How do I share a calculation?", a: "Click Share to copy a URL with ?cpu= and ?mem=. Opening the link restores the same values." },
+      { q: "What does the QoS panel show?", a: "A simplified Guaranteed / Burstable / BestEffort class for one container from request/limit fields — not a workload sizing recommendation." },
     ],
   },
   zh: {
@@ -241,6 +251,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "建议：",
     benefitsTitle: "为什么使用 k8size",
     benefits: [
+      "<strong>警告、分享与 QoS。</strong>十进制单位会提示改为 Mi/Gi；可复制 ?cpu=&mem= 链接；并查看单容器 QoS。",
       "<strong>核 ↔ 毫核。</strong>输入小数核或整数毫核，立即看到两种写法及 <code>cpu: \"500m\"</code> 一类 YAML。",
       "<strong>二进制与十进制内存。</strong>分清 Mi/Gi（1024）与 M/G/MB/GB（1000），避免把 256Mi 当成 256M。",
       "<strong>可复制的 YAML。</strong>复制 <code>cpu</code> 与 <code>memory</code> 行用于 requests 和 limits。",
@@ -293,6 +304,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Consejos:",
     benefitsTitle: "Por qué usar k8size",
     benefits: [
+      "<strong>Avisos, compartir y QoS.</strong> Unidades decimales avisan hacia Mi/Gi; copie ?cpu=&mem=; revise QoS de un contenedor.",
       "<strong>Cores ↔ millicores.</strong> Introduzca cores decimales o millicores enteros y vea ambas formas y YAML como <code>cpu: \"500m\"</code>.",
       "<strong>Memoria binaria vs decimal.</strong> Distinga Mi/Gi (1024) de M/G/MB/GB (1000) para no confundir 256Mi con 256M.",
       "<strong>Fragmentos YAML listos.</strong> Copie líneas <code>cpu</code> y <code>memory</code> para requests y limits.",
@@ -345,6 +357,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "सुझाव:",
     benefitsTitle: "k8size क्यों उपयोग करें",
     benefits: [
+      "<strong>चेतावनी, शेयर और QoS.</strong> दशमलव इकाइयों पर Mi/Gi सुझाव; ?cpu=&mem= लिंक; एक कंटेनर QoS।",
       "<strong>Cores ↔ millicores.</strong> दशमलव cores या पूर्णांक millicores दर्ज करें और दोनों रूप तथा <code>cpu: \"500m\"</code> जैसा YAML देखें।",
       "<strong>बाइनरी बनाम दशमलव मेमोरी.</strong> Mi/Gi (1024) को M/G/MB/GB (1000) से अलग रखें ताकि 256Mi को 256M न समझें।",
       "<strong>पेस्ट करने योग्य YAML.</strong> requests और limits के लिए <code>cpu</code> तथा <code>memory</code> पंक्तियाँ कॉपी करें।",
@@ -397,6 +410,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "نصائح:",
     benefitsTitle: "لماذا تستخدم k8size",
     benefits: [
+      "<strong>تحذير ومشاركة وQoS.</strong> الوحدات العشرية تقترح Mi/Gi؛ انسخ ?cpu=&mem=؛ راجع QoS لحاوية واحدة.",
       "<strong>الأنوية ↔ الميلي كور.</strong> أدخل أنوية عشرية أو ميلي كور صحيحة وشاهد الشكلين وYAML مثل <code>cpu: \"500m\"</code>.",
       "<strong>ذاكرة ثنائية مقابل عشرية.</strong> ميّز Mi/Gi (1024) عن M/G/MB/GB (1000) حتى لا تخلط 256Mi مع 256M.",
       "<strong>مقتطفات YAML جاهزة.</strong> انسخ سطور <code>cpu</code> و<code>memory</code> لـ requests وlimits.",
@@ -449,6 +463,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "টিপস:",
     benefitsTitle: "কেন k8size ব্যবহার করবেন",
     benefits: [
+      "<strong>সতর্কতা, শেয়ার ও QoS.</strong> দশমিক এককে Mi/Gi পরামর্শ; ?cpu=&mem= লিংক; এক কন্টেইনার QoS।",
       "<strong>Cores ↔ millicores.</strong> দশমিক cores বা পূর্ণসংখ্যা millicores লিখে উভয় রূপ ও <code>cpu: \"500m\"</code> দেখুন।",
       "<strong>বাইনারি বনাম দশমিক মেমরি.</strong> Mi/Gi (1024) ও M/G/MB/GB (1000) আলাদা রাখুন যাতে 256Mi কে 256M না বোঝেন।",
       "<strong>প্রস্তুত YAML.</strong> requests ও limits-এর জন্য <code>cpu</code> ও <code>memory</code> কপি করুন।",
@@ -501,6 +516,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Dicas:",
     benefitsTitle: "Por que usar o k8size",
     benefits: [
+      "<strong>Avisos, partilha e QoS.</strong> Unidades decimais sugerem Mi/Gi; copie ?cpu=&mem=; veja QoS de um contentor.",
       "<strong>Cores ↔ millicores.</strong> Introduza cores decimais ou millicores inteiros e veja ambas as formas e YAML como <code>cpu: \"500m\"</code>.",
       "<strong>Memória binária vs decimal.</strong> Distinga Mi/Gi (1024) de M/G/MB/GB (1000) para não confundir 256Mi com 256M.",
       "<strong>Trechos YAML prontos.</strong> Copie linhas <code>cpu</code> e <code>memory</code> para requests e limits.",
@@ -553,6 +569,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Conseils :",
     benefitsTitle: "Pourquoi utiliser k8size",
     benefits: [
+      "<strong>Alertes, partage et QoS.</strong> Les unités décimales suggèrent Mi/Gi ; copiez ?cpu=&mem= ; vérifiez le QoS d’un conteneur.",
       "<strong>Cores ↔ millicores.</strong> Saisissez des cores décimaux ou des millicores entiers et voyez les deux formes plus un YAML comme <code>cpu: \"500m\"</code>.",
       "<strong>Mémoire binaire vs décimale.</strong> Distinguez Mi/Gi (1024) de M/G/MB/GB (1000) pour ne pas confondre 256Mi et 256M.",
       "<strong>Extraits YAML prêts.</strong> Copiez les lignes <code>cpu</code> et <code>memory</code> pour requests et limits.",
@@ -605,6 +622,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Tipps:",
     benefitsTitle: "Warum k8size",
     benefits: [
+      "<strong>Warnung, Teilen und QoS.</strong> Dezimal-Einheiten schlagen Mi/Gi vor; ?cpu=&mem= kopieren; QoS eines Containers prüfen.",
       "<strong>Cores ↔ Millicores.</strong> Geben Sie Dezimal-Cores oder ganze Millicores ein und sehen Sie beide Formen plus YAML wie <code>cpu: \"500m\"</code>.",
       "<strong>Binärer vs. dezimaler Speicher.</strong> Trennen Sie Mi/Gi (1024) von M/G/MB/GB (1000), damit 256Mi nicht mit 256M verwechselt wird.",
       "<strong>Fertige YAML-Schnipsel.</strong> Kopieren Sie <code>cpu</code>- und <code>memory</code>-Zeilen für requests und limits.",
@@ -657,6 +675,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "ヒント:",
     benefitsTitle: "k8size を使う理由",
     benefits: [
+      "<strong>警告・共有・QoS。</strong>十進単位では Mi/Gi を提案。?cpu=&mem= をコピーし、単一コンテナ QoS を確認。",
       "<strong>コア ↔ ミリコア。</strong>小数コアまたは整数ミリコアを入力すると両方の形と <code>cpu: \"500m\"</code> のような YAML が表示されます。",
       "<strong>二進と十進のメモリ。</strong>Mi/Gi（1024）と M/G/MB/GB（1000）を区別し、256Mi を 256M と混同しません。",
       "<strong>貼り付け可能な YAML。</strong>requests / limits 用に <code>cpu</code> と <code>memory</code> 行をコピーできます。",
@@ -709,6 +728,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Tips:",
     benefitsTitle: "Mengapa memakai k8size",
     benefits: [
+      "<strong>Peringatan, bagikan, QoS.</strong> Unit desimal menyarankan Mi/Gi; salin ?cpu=&mem=; cek QoS satu kontainer.",
       "<strong>Cores ↔ millicores.</strong> Masukkan cores desimal atau millicores bulat dan lihat kedua bentuk plus YAML seperti <code>cpu: \"500m\"</code>.",
       "<strong>Memori biner vs desimal.</strong> Bedakan Mi/Gi (1024) dari M/G/MB/GB (1000) agar 256Mi tidak dikira 256M.",
       "<strong>Cuplikan YAML siap tempel.</strong> Salin baris <code>cpu</code> dan <code>memory</code> untuk requests dan limits.",
@@ -761,6 +781,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "ਸੁਝਾਅ:",
     benefitsTitle: "k8size ਕਿਉਂ ਵਰਤੋ",
     benefits: [
+      "<strong>ਚੇਤਾਵਨੀ, ਸਾਂਝਾ ਅਤੇ QoS.</strong> ਦਸ਼ਮਲਵ ਇਕਾਈਆਂ ਤੇ Mi/Gi; ?cpu=&mem= ਕਾਪੀ; ਇੱਕ ਕੰਟੇਨਰ QoS।",
       "<strong>Cores ↔ millicores.</strong> ਦਸ਼ਮਲਵ cores ਜਾਂ ਪੂਰਨ millicores ਭਰੋ ਅਤੇ ਦੋਵੇਂ ਰੂਪ ਤੇ <code>cpu: \"500m\"</code> ਵਰਗਾ YAML ਵੇਖੋ।",
       "<strong>ਬਾਈਨਰੀ ਬਨਾਮ ਦਸ਼ਮਲਵ ਮੈਮੋਰੀ.</strong> Mi/Gi (1024) ਨੂੰ M/G/MB/GB (1000) ਤੋਂ ਵੱਖ ਰੱਖੋ ਤਾਂ ਜੋ 256Mi ਨੂੰ 256M ਨਾ ਸਮਝੋ।",
       "<strong>ਤਿਆਰ YAML.</strong> requests ਤੇ limits ਲਈ <code>cpu</code> ਤੇ <code>memory</code> ਕਾਪੀ ਕਰੋ।",
@@ -813,6 +834,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Tips:",
     benefitsTitle: "Kok nganggo k8size",
     benefits: [
+      "<strong>Pepenget, enggo, QoS.</strong> Unit desimal nyaranake Mi/Gi; salin ?cpu=&mem=; priksa QoS siji kontainer.",
       "<strong>Cores ↔ millicores.</strong> Lebokake cores desimal utawa millicores wutuh lan deleng loro wujud plus YAML kaya <code>cpu: \"500m\"</code>.",
       "<strong>Memori biner vs desimal.</strong> Bedaake Mi/Gi (1024) saka M/G/MB/GB (1000) supaya 256Mi ora dikira 256M.",
       "<strong>Cuplikan YAML siap.</strong> Salin baris <code>cpu</code> lan <code>memory</code> kanggo requests lan limits.",
@@ -865,6 +887,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "చిట్కాలు:",
     benefitsTitle: "k8size ఎందుకు",
     benefits: [
+      "<strong>హెచ్చరిక, షేర్, QoS.</strong> దశాంశ యూనిట్లకు Mi/Gi సూచన; ?cpu=&mem= కాపీ; ఒక కంటైనర్ QoS.",
       "<strong>Cores ↔ millicores.</strong> దశాంశ cores లేదా పూర్ణ millicores ఇచ్చి రెండు రూపాలు మరియు <code>cpu: \"500m\"</code> చూడండి.",
       "<strong>బైనరీ vs దశాంశ మెమరీ.</strong> Mi/Gi (1024)ను M/G/MB/GB (1000) నుండి వేరు చేయండి — 256Miను 256Mగా తీసుకోకండి.",
       "<strong>సిద్ధ YAML.</strong> requests మరియు limits కోసం <code>cpu</code>, <code>memory</code> కాపీ చేయండి.",
@@ -917,6 +940,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "İpuçları:",
     benefitsTitle: "Neden k8size",
     benefits: [
+      "<strong>Uyarı, paylaşım ve QoS.</strong> Ondalık birimler Mi/Gi önerir; ?cpu=&mem= kopyalayın; tek konteyner QoS.",
       "<strong>Cores ↔ millicores.</strong> Ondalık core veya tam milicore girin; her iki biçimi ve <code>cpu: \"500m\"</code> gibi YAML görün.",
       "<strong>İkili vs ondalık bellek.</strong> Mi/Gi (1024) ile M/G/MB/GB (1000) ayırın; 256Mi’yi 256M sanmayın.",
       "<strong>Hazır YAML.</strong> requests ve limits için <code>cpu</code> ve <code>memory</code> satırlarını kopyalayın.",
@@ -969,6 +993,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "팁:",
     benefitsTitle: "k8size를 쓰는 이유",
     benefits: [
+      "<strong>경고·공유·QoS.</strong> 십진 단위는 Mi/Gi를 제안하고 ?cpu=&mem= 링크와 단일 컨테이너 QoS를 제공합니다.",
       "<strong>코어 ↔ 밀리코어.</strong> 소수 코어나 정수 밀리코어를 입력하면 두 형태와 <code>cpu: \"500m\"</code> 같은 YAML을 봅니다.",
       "<strong>이진 vs 십진 메모리.</strong> Mi/Gi(1024)와 M/G/MB/GB(1000)를 구분해 256Mi를 256M으로 착각하지 마세요.",
       "<strong>붙여넣기용 YAML.</strong> requests/limits용 <code>cpu</code>·<code>memory</code> 줄을 복사합니다.",
@@ -1021,6 +1046,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "टीपा:",
     benefitsTitle: "k8size का वापरावे",
     benefits: [
+      "<strong>इशारा, शेअर आणि QoS.</strong> दशांश एककांवर Mi/Gi; ?cpu=&mem= कॉपी; एक कंटेनर QoS.",
       "<strong>Cores ↔ millicores.</strong> दशांश cores किंवा पूर्ण millicores टाका आणि दोन्ही रूपे व <code>cpu: \"500m\"</code> पहा.",
       "<strong>बायनरी विरुद्ध दशांश मेमरी.</strong> Mi/Gi (1024) आणि M/G/MB/GB (1000) वेगळे ठेवा — 256Mi ला 256M समजू नका.",
       "<strong>तयार YAML.</strong> requests आणि limits साठी <code>cpu</code> व <code>memory</code> कॉपी करा.",
@@ -1073,6 +1099,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Mẹo:",
     benefitsTitle: "Vì sao dùng k8size",
     benefits: [
+      "<strong>Cảnh báo, chia sẻ và QoS.</strong> Đơn vị thập phân gợi ý Mi/Gi; sao chép ?cpu=&mem=; xem QoS một container.",
       "<strong>Cores ↔ millicores.</strong> Nhập cores thập phân hoặc millicores nguyên và xem cả hai dạng cùng YAML như <code>cpu: \"500m\"</code>.",
       "<strong>Bộ nhớ nhị phân vs thập phân.</strong> Phân biệt Mi/Gi (1024) với M/G/MB/GB (1000) để không nhầm 256Mi với 256M.",
       "<strong>Đoạn YAML sẵn.</strong> Sao chép dòng <code>cpu</code> và <code>memory</code> cho requests và limits.",
@@ -1125,6 +1152,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "குறிப்புகள்:",
     benefitsTitle: "ஏன் k8size",
     benefits: [
+      "<strong>எச்சரிக்கை, பகிர்வு, QoS.</strong> தசம அலகுகளுக்கு Mi/Gi பரிந்துரை; ?cpu=&mem= நகல்; ஒரு கொள்கலன் QoS.",
       "<strong>Cores ↔ millicores.</strong> தசம cores அல்லது முழு millicores உள்ளிட்டு இரு வடிவங்களும் <code>cpu: \"500m\"</code> போன்ற YAML-ஐயும் பாருங்கள்.",
       "<strong>இருமம் vs தசம நினைவகம்.</strong> Mi/Gi (1024)ஐ M/G/MB/GB (1000)இலிருந்து பிரிக்கவும் — 256Miஐ 256M ஆக எண்ண வேண்டாம்.",
       "<strong>தயாரான YAML.</strong> requests மற்றும் limitsக்கு <code>cpu</code>, <code>memory</code> நகலெடுக்கவும்.",
@@ -1177,6 +1205,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "Suggerimenti:",
     benefitsTitle: "Perché usare k8size",
     benefits: [
+      "<strong>Avvisi, condivisione e QoS.</strong> Le unità decimali suggeriscono Mi/Gi; copia ?cpu=&mem=; controlla il QoS di un contenitore.",
       "<strong>Cores ↔ millicores.</strong> Inserisci core decimali o millicore interi e vedi entrambe le forme più YAML come <code>cpu: \"500m\"</code>.",
       "<strong>Memoria binaria vs decimale.</strong> Distingui Mi/Gi (1024) da M/G/MB/GB (1000) per non confondere 256Mi con 256M.",
       "<strong>Snippet YAML pronti.</strong> Copia le righe <code>cpu</code> e <code>memory</code> per requests e limits.",
@@ -1229,6 +1258,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "نکته‌ها:",
     benefitsTitle: "چرا k8size",
     benefits: [
+      "<strong>هشدار، هم‌رسانی و QoS.</strong> واحدهای ده‌دهی Mi/Gi پیشنهاد می‌کنند؛ ?cpu=&mem= را کپی کنید؛ QoS یک کانتینر را ببینید.",
       "<strong>هسته ↔ میلی‌کور.</strong> هسته‌های اعشاری یا میلی‌کور صحیح وارد کنید و هر دو شکل و YAML مانند <code>cpu: \"500m\"</code> را ببینید.",
       "<strong>حافظه دودویی در برابر دهدهی.</strong> Mi/Gi (۱۰۲۴) را از M/G/MB/GB (۱۰۰۰) جدا کنید تا ۲۵۶Mi را با ۲۵۶M اشتباه نگیرید.",
       "<strong>قطعه‌های YAML آماده.</strong> خطوط <code>cpu</code> و <code>memory</code> را برای requests و limits کپی کنید.",
@@ -1281,6 +1311,7 @@ const bodies: Record<Locale, SeoBody> = {
     tipsLabel: "qaghmey:",
     benefitsTitle: "qatlh k8size lo'",
     benefits: [
+      "<strong>ghuH, 'ej yo', QoS.</strong> 1000 'ay'mey Mi/Gi; ?cpu=&mem= yIqaw; wa' QoS yIlegh.",
       "<strong>cores ↔ millicores.</strong> cores decimal pagh millicores ngugh yIghItlh 'ej cha' Dochmey <code>cpu: \"500m\"</code> je yIlegh.",
       "<strong>qawHaq binary vs decimal.</strong> Mi/Gi (1024) M/G/MB/GB (1000) je yIpIm — 256Mi 256M 'oHbe'.",
       "<strong>YAML Hol.</strong> requests limits jevaD <code>cpu</code> <code>memory</code> je yIlan.",

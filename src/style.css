@@ -245,8 +245,25 @@ h1 {
 .toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
   margin: 0 0 1rem;
+}
+
+.toolbar .status {
+  margin: 0;
+  min-height: 0;
+  font-size: 0.9rem;
+}
+
+.row-status {
+  font-size: 0.85rem;
+  color: var(--ok);
+  min-width: 4.5rem;
+}
+
+.row-status.is-error {
+  color: var(--danger);
 }
 
 .warn {

@@ -17,7 +17,7 @@
     <title>k8size — конвертер CPU и памяти Kubernetes</title>
     <meta
       name="description"
-      content="Конвертируйте cores и millicores, Ki/Mi/Gi и M/G/MB/GB в единицы Kubernetes. Живой перевод в браузере, YAML-фрагменты и краткая подсказка requests vs limits."
+      content="Конвертер единиц Kubernetes: cores ↔ millicores, Mi/Gi vs M/G, предупреждение о десятичных суффиксах, QoS, шаринг ?cpu=&mem=. Всё в браузере."
     />
     <link rel="canonical" href="https://k8size.dmosk.net/ru/" />
     <link rel="alternate" hreflang="ru" href="https://k8size.dmosk.net/ru/" />
@@ -28,7 +28,7 @@
     <meta property="og:title" content="k8size — конвертер CPU и памяти Kubernetes" />
     <meta
       property="og:description"
-      content="Конвертируйте cores и millicores, Ki/Mi/Gi и M/G/MB/GB в единицы Kubernetes. Живой перевод в браузере, YAML-фрагменты и краткая подсказка requests vs limits."
+      content="Конвертер единиц Kubernetes: cores ↔ millicores, Mi/Gi vs M/G, предупреждение о десятичных суффиксах, QoS, шаринг ?cpu=&mem=. Всё в браузере."
     />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -92,7 +92,7 @@
 
       <h1 id="heading">Конвертер единиц Kubernetes</h1>
       <p class="lead" id="lead">
-        Переводите CPU (cores ↔ millicores) и память (Ki/Mi/Gi и M/G/MB/GB) в формат манифестов. Всё считается в браузере — без API и без загрузки данных.
+        Переводите CPU и память в формат манифестов, вставляйте <code>500m</code>/<code>256Mi</code>, смотрите предупреждение Mi vs M, делитесь ссылкой и проверяйте QoS. Всё в браузере — без API.
       </p>
       <p class="tip" id="rl-tip">
         <strong>requests</strong> — гарантированный минимум для планировщика; <strong>limits</strong> — потолок потребления. Обычно requests ≤ limits; равные значения → Guaranteed QoS.
@@ -100,6 +100,7 @@
 
       <div class="toolbar">
         <button type="button" class="btn" id="share">Ссылка</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
       </div>
 
       <noscript>
@@ -133,10 +134,12 @@
           <div class="yaml-row">
             <pre class="yaml-snippet" id="cpu-yaml-m"></pre>
             <button type="button" class="btn btn-small" id="cpu-copy-m">Copy</button>
+            <span class="row-status" id="cpu-copy-m-status" aria-live="polite"></span>
           </div>
           <div class="yaml-row">
             <pre class="yaml-snippet" id="cpu-yaml-c"></pre>
             <button type="button" class="btn btn-small" id="cpu-copy-c">Copy</button>
+            <span class="row-status" id="cpu-copy-c-status" aria-live="polite"></span>
           </div>
         </div>
       </section>
@@ -178,6 +181,7 @@
           <div class="yaml-row">
             <pre class="yaml-snippet" id="mem-yaml"></pre>
             <button type="button" class="btn btn-small" id="mem-copy-yaml">Copy</button>
+            <span class="row-status" id="mem-copy-yaml-status" aria-live="polite"></span>
           </div>
         </div>
       </section>
@@ -210,8 +214,6 @@
           <p class="qos-explain" id="qos-explain"></p>
         </div>
       </section>
-
-      <p class="status" id="status" role="status" aria-live="polite"></p>
 
       <article class="seo" id="seo-root">
         <section class="seo-block" aria-labelledby="seo-benefits">

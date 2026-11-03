@@ -47,19 +47,37 @@ function format(template: string, vars: Record<string, string | number>): string
   return template.replace(/\{(\w+)\}/g, (_, name: string) => String(vars[name] ?? ""));
 }
 
-function setStatus(message: string, isError = false): void {
-  const el = byId<HTMLParagraphElement>("status");
-  el.textContent = message;
-  el.classList.toggle("is-error", isError);
+function clearActionStatuses(): void {
+  const main = byId<HTMLElement>("status");
+  main.textContent = "";
+  main.classList.remove("is-error");
+  for (const el of document.querySelectorAll<HTMLElement>(".row-status")) {
+    el.textContent = "";
+    el.classList.remove("is-error");
+  }
 }
 
-async function copyText(text: string, okKey: "copied" | "shareCopied" = "copied"): Promise<void> {
+function setStatus(
+  message: string,
+  isError = false,
+  target: HTMLElement = byId("status"),
+): void {
+  clearActionStatuses();
+  target.textContent = message;
+  target.classList.toggle("is-error", isError);
+}
+
+async function copyText(
+  text: string,
+  okKey: "copied" | "shareCopied" = "copied",
+  statusEl: HTMLElement = byId("status"),
+): Promise<void> {
   if (!text) return;
   try {
     await navigator.clipboard.writeText(text);
-    setStatus(t(state.locale, okKey));
+    setStatus(t(state.locale, okKey), false, statusEl);
   } catch {
-    setStatus(t(state.locale, "copyError"), true);
+    setStatus(t(state.locale, "copyError"), true, statusEl);
   }
 }
 
@@ -395,17 +413,29 @@ function init(): void {
   }
 
   byId<HTMLButtonElement>("cpu-copy-m").addEventListener("click", () => {
-    void copyText(byId<HTMLElement>("cpu-yaml-m").textContent ?? "");
+    void copyText(
+      byId<HTMLElement>("cpu-yaml-m").textContent ?? "",
+      "copied",
+      byId("cpu-copy-m-status"),
+    );
   });
   byId<HTMLButtonElement>("cpu-copy-c").addEventListener("click", () => {
-    void copyText(byId<HTMLElement>("cpu-yaml-c").textContent ?? "");
+    void copyText(
+      byId<HTMLElement>("cpu-yaml-c").textContent ?? "",
+      "copied",
+      byId("cpu-copy-c-status"),
+    );
   });
   byId<HTMLButtonElement>("mem-copy-yaml").addEventListener("click", () => {
-    void copyText(byId<HTMLElement>("mem-yaml").textContent ?? "");
+    void copyText(
+      byId<HTMLElement>("mem-yaml").textContent ?? "",
+      "copied",
+      byId("mem-copy-yaml-status"),
+    );
   });
   byId<HTMLButtonElement>("share").addEventListener("click", () => {
     syncUrl();
-    void copyText(window.location.href, "shareCopied");
+    void copyText(window.location.href, "shareCopied", byId("status"));
   });
 
   updateCpu();
