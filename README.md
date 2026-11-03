@@ -1,6 +1,6 @@
 # k8size
 
-Browser-only converter for Kubernetes resource units: CPU cores ↔ millicores (`m`) and memory (Ki/Mi/Gi/Ti, K/M/G/T, KB/MB/GB/TB, bytes). Live equivalents, YAML snippets (`cpu: "500m"`, `memory: "256Mi"`), example fill buttons, and a short requests vs limits tip — not a sizing advisor and not a full manifest editor.
+Browser-only converter for Kubernetes resource units: CPU cores ↔ millicores (`m`) and memory (Ki/Mi/Gi/Ti, K/M/G/T, KB/MB/GB/TB, bytes). Smart paste (`500m`, `256Mi`), decimal-unit warnings (M vs Mi), shareable `?cpu=&mem=` links, a light single-container QoS explainer, YAML snippets, and a short requests vs limits tip — not a sizing advisor and not a full manifest editor.
 
 **License:** MIT (copyright dmosk)  
 **Live (prod):** https://k8size.dmosk.net/
