@@ -289,22 +289,27 @@ h1 {
 
 .qos-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 9.5rem));
+  gap: 0.45rem 0.65rem;
+  width: max-content;
+  max-width: 100%;
 }
 
 .qos-field {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
   min-width: 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
 }
 
 .qos-field .unit-input {
   width: 100%;
+  flex: none;
+  min-height: 2rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.875rem;
 }
 
 .qos-result {
@@ -334,7 +339,8 @@ h1 {
 
 @media (max-width: 640px) {
   .qos-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
   }
 }
 
