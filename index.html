@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#17110c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="k8size" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <title>k8size — конвертер CPU и памяти Kubernetes</title>
+    <meta
+      name="description"
+      content="Конвертируйте cores и millicores, Ki/Mi/Gi и M/G/MB/GB в единицы Kubernetes. Живой перевод в браузере, YAML-фрагменты и краткая подсказка requests vs limits."
+    />
+    <link rel="canonical" href="https://k8size.dmosk.net/ru/" />
+    <link rel="alternate" hreflang="ru" href="https://k8size.dmosk.net/ru/" />
+    <link rel="alternate" hreflang="en" href="https://k8size.dmosk.net/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://k8size.dmosk.net/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k8size.dmosk.net/ru/" />
+    <meta property="og:title" content="k8size — конвертер CPU и памяти Kubernetes" />
+    <meta
+      property="og:description"
+      content="Конвертируйте cores и millicores, Ki/Mi/Gi и M/G/MB/GB в единицы Kubernetes. Живой перевод в браузере, YAML-фрагменты и краткая подсказка requests vs limits."
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="https://k8size.dmosk.net/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=optional"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" id="ld-app"></script>
+    <script type="application/ld+json" id="ld-faq"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="topbar">
+        <p class="brand"><a href="https://dmosk.net/">dmosk</a> / k8size</p>
+        <div class="topbar-actions">
+          <a
+            class="github-link"
+            href="https://github.com/dmosktest/k8size"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <svg class="github-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+          </a>
+          <a
+            class="telegram-link"
+            href="https://t.me/dmosk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <svg class="telegram-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+              />
+            </svg>
+          </a>
+          <details class="lang">
+            <summary class="lang-summary" aria-label="Язык сайта">
+              <img class="lang-flag" src="/flags/1f1f7-1f1fa.png" alt="" width="20" height="20" decoding="async" aria-hidden="true" />
+              <span class="lang-current-name">Русский</span>
+            </summary>
+            <div class="lang-menu" role="list">
+              <a href="/ru/" class="lang-option active" id="lang-ru" data-locale="ru" hreflang="ru" lang="ru" aria-current="page"><img class="lang-flag" src="/flags/1f1f7-1f1fa.png" alt="" width="20" height="20" decoding="async" aria-hidden="true" /><span class="lang-name">Русский</span></a>
+              <a href="/en/" class="lang-option" id="lang-en" data-locale="en" hreflang="en" lang="en" aria-current="false"><img class="lang-flag" src="/flags/1f1ec-1f1e7.png" alt="" width="20" height="20" decoding="async" aria-hidden="true" /><span class="lang-name">English</span></a>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <h1 id="heading">Конвертер единиц Kubernetes</h1>
+      <p class="lead" id="lead">
+        Переводите CPU (cores ↔ millicores) и память (Ki/Mi/Gi и M/G/MB/GB) в формат манифестов. Всё считается в браузере — без API и без загрузки данных.
+      </p>
+      <p class="tip" id="rl-tip">
+        <strong>requests</strong> — гарантированный минимум для планировщика; <strong>limits</strong> — потолок потребления. Обычно requests ≤ limits; равные значения → Guaranteed QoS.
+      </p>
+
+      <div class="toolbar">
+        <button type="button" class="btn" id="share">Ссылка</button>
+      </div>
+
+      <noscript>
+        <p class="noscript" data-i18n="noscript">
+          Включите JavaScript, чтобы конвертировать единицы Kubernetes.
+        </p>
+      </noscript>
+
+      <section class="panel convert-panel" aria-labelledby="cpu-title">
+        <div class="panel-head">
+          <h2 class="panel-title" id="cpu-title">CPU</h2>
+          <div class="examples" id="cpu-examples"></div>
+        </div>
+        <div class="field-row">
+          <input
+            type="text"
+            id="cpu-input"
+            class="unit-input"
+            inputmode="decimal"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="0.5 или 500m"
+          />
+          <select id="cpu-unit" class="unit-select" aria-label="CPU unit">
+            <option value="cores">cores</option>
+            <option value="millicores">millicores (m)</option>
+          </select>
+        </div>
+        <div class="result-block" id="cpu-results" hidden>
+          <dl class="equiv-list" id="cpu-equiv"></dl>
+          <div class="yaml-row">
+            <pre class="yaml-snippet" id="cpu-yaml-m"></pre>
+            <button type="button" class="btn btn-small" id="cpu-copy-m">Copy</button>
+          </div>
+          <div class="yaml-row">
+            <pre class="yaml-snippet" id="cpu-yaml-c"></pre>
+            <button type="button" class="btn btn-small" id="cpu-copy-c">Copy</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel convert-panel" aria-labelledby="mem-title">
+        <div class="panel-head">
+          <h2 class="panel-title" id="mem-title">Память</h2>
+          <div class="examples" id="mem-examples"></div>
+        </div>
+        <div class="field-row">
+          <input
+            type="text"
+            id="mem-input"
+            class="unit-input"
+            inputmode="decimal"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="256 или 256Mi"
+          />
+          <select id="mem-unit" class="unit-select" aria-label="Memory unit">
+            <option value="Mi">Mi</option>
+            <option value="Gi">Gi</option>
+            <option value="Ki">Ki</option>
+            <option value="Ti">Ti</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="K">K</option>
+            <option value="T">T</option>
+            <option value="MB">MB</option>
+            <option value="GB">GB</option>
+            <option value="KB">KB</option>
+            <option value="TB">TB</option>
+            <option value="B">B</option>
+          </select>
+        </div>
+        <p class="warn" id="mem-warn" hidden></p>
+        <div class="result-block" id="mem-results" hidden>
+          <dl class="equiv-list" id="mem-equiv"></dl>
+          <div class="yaml-row">
+            <pre class="yaml-snippet" id="mem-yaml"></pre>
+            <button type="button" class="btn btn-small" id="mem-copy-yaml">Copy</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel convert-panel" aria-labelledby="qos-title">
+        <div class="panel-head">
+          <h2 class="panel-title" id="qos-title">Класс QoS (один контейнер)</h2>
+        </div>
+        <p class="qos-hint" id="qos-hint">Упрощённый вид для одного контейнера — не советник по размеру кластера.</p>
+        <div class="qos-grid">
+          <label class="qos-field">
+            <span id="qos-req-cpu-label">request cpu</span>
+            <input type="text" id="qos-req-cpu" class="unit-input" autocomplete="off" spellcheck="false" placeholder="500m" />
+          </label>
+          <label class="qos-field">
+            <span id="qos-lim-cpu-label">limit cpu</span>
+            <input type="text" id="qos-lim-cpu" class="unit-input" autocomplete="off" spellcheck="false" placeholder="500m" />
+          </label>
+          <label class="qos-field">
+            <span id="qos-req-mem-label">request memory</span>
+            <input type="text" id="qos-req-mem" class="unit-input" autocomplete="off" spellcheck="false" placeholder="256Mi" />
+          </label>
+          <label class="qos-field">
+            <span id="qos-lim-mem-label">limit memory</span>
+            <input type="text" id="qos-lim-mem" class="unit-input" autocomplete="off" spellcheck="false" placeholder="256Mi" />
+          </label>
+        </div>
+        <div class="qos-result" id="qos-result">
+          <p class="qos-class"><span id="qos-class-label">Класс</span>: <strong id="qos-class-value">BestEffort</strong></p>
+          <p class="qos-explain" id="qos-explain"></p>
+        </div>
+      </section>
+
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+
+      <article class="seo" id="seo-root">
+        <section class="seo-block" aria-labelledby="seo-benefits">
+          <h2 id="seo-benefits">Преимущества</h2>
+          <ul></ul>
+        </section>
+        <section class="seo-block" aria-labelledby="seo-how">
+          <h2 id="seo-how">Как пользоваться</h2>
+          <ol></ol>
+        </section>
+        <section class="seo-block" aria-labelledby="seo-strong">
+          <h2 id="seo-strong">Подсказки по единицам</h2>
+          <p></p>
+          <p class="seo-label"></p>
+          <ul></ul>
+        </section>
+        <section class="seo-block" aria-labelledby="seo-uses">
+          <h2 id="seo-uses">Для чего нужен сервис</h2>
+          <ul></ul>
+        </section>
+        <section class="seo-block" aria-labelledby="seo-faq">
+          <h2 id="seo-faq">Частые вопросы</h2>
+          <div class="faq-list"></div>
+        </section>
+      </article>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
